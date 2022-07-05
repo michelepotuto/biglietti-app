@@ -5,6 +5,7 @@ const AuthContext = React.createContext({
   isLoggedin: sessionStorage.getItem(storageKey),
   loggedUser: "",
   login: (obj) => {},
+  logout: () => {},
 });
 
 export default AuthContext;
@@ -16,9 +17,15 @@ export const AuthContextProvider = (props) => {
   const [loggedUser, setLoggedUser] = useState("");
 
   const loginHandler = (obj) => {
-    setIsLoggedIn(false);
+    setIsLoggedIn(true);
     setLoggedUser("");
+   
   };
+    
+  const logoutHandler = () => {
+  setIsLoggedIn(false);
+  setLoggedUser("");
+  }
 
   return (
     <AuthContext.Provider
@@ -26,6 +33,7 @@ export const AuthContextProvider = (props) => {
         isLoggedIn: isLoggedin,
         loggedUser: loggedUser,
         login: loginHandler,
+        logout: logoutHandler,
       }}
     >
       {props.children}
