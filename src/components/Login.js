@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import AuthContext from "../context/auth-conext";
+import AuthContext from "../context/auth-context";
 
 const Login = () => {
   const [userInput, setUserInput] = useState("");
@@ -14,7 +14,7 @@ const Login = () => {
     if (UserData) {
       userCtx.login(obj);
     } else {
-      alert("logout");
+      userCtx.logout();
     }
   };
 
