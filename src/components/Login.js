@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import AuthContext from "../context/auth-context";
+import AuthContext from "./context/auth-context";
 
 const Login = () => {
   const [userInput, setUserInput] = useState("");

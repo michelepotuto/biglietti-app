@@ -7,6 +7,9 @@ import Home from "./components/Home";
 import { Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 import Cart from "./components/Cart";
+import 'bootstrap-icons/font/bootstrap-icons.css';
+
+
 
 function App() {
   return (
