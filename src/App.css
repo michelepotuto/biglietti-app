@@ -1,0 +1,53 @@
+.container1 {
+    width: 100%;
+
+    background-image: url("./assets/sfondo.jpeg");
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .nav-link {
+    display: fixed;
+    color: black!important;
+    text-decoration: none;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.99);
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.711)
+}
+.nav-cart {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.99);
+    border-radius: 6px;
+    background-color:rgba(171, 18, 89, 0.789);
+}
+
+.nav-link:hover {
+    color: white!important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 6px;
+    background-color: rgb(64, 64, 71);
+  }
+
+.nav-item {
+      display: block;
+  padding: 0.5rem 0.5rem;
+  color: #eaeaea;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.99);
+
+    background-color:rgba(36, 207, 207, 0.626);
+}
