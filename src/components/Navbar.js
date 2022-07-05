@@ -33,6 +33,11 @@ const Navbar = () => {
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
+              <Nav.Link as={Link} to="/home">
+                Home
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
               <Nav.Link as={Link} to="/cart" className="nav-cart">
                 CARRELLO
               </Nav.Link>
