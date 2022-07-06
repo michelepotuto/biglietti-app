@@ -1,15 +1,13 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Header/Navbar";
 import { Fragment } from "react";
-import Home from "./components/Home";
+import Home from "./components/pages/Home";
 import { Route, Routes } from "react-router-dom";
-import Footer from "./components/Footer";
-import Cart from "./components/Cart";
-import 'bootstrap-icons/font/bootstrap-icons.css';
-
-
+import Footer from "./components/Header/Footer";
+import Cart from "./components/pages/Cart";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 function App() {
   return (

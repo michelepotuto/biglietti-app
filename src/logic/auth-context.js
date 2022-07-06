@@ -19,13 +19,12 @@ export const AuthContextProvider = (props) => {
   const loginHandler = (obj) => {
     setIsLoggedIn(true);
     setLoggedUser("");
-   
   };
-    
+
   const logoutHandler = () => {
-  setIsLoggedIn(false);
-  setLoggedUser("");
-  }
+    setIsLoggedIn(false);
+    setLoggedUser("");
+  };
 
   return (
     <AuthContext.Provider
