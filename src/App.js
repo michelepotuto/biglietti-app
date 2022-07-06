@@ -46,7 +46,7 @@ function App() {
             {/* <NavbarLogin /> */}
             <form onSubmit={handleSubmit}>
               <div className="input-container">
-                <label>Codice cliente </label>
+                <label className="m-2">Codice cliente </label>
                 <input
                   autoComplete="on"
                   onChange={usernameChangeHandler}
