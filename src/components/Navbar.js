@@ -23,7 +23,7 @@ const Navbar = () => {
   <div className="title h4">PRENOTA IL TUO CONCERTO DOVE E COME VUOI</div>
   <Nav className="justify-content-end" activeKey="/home">
   <Nav.Item>
-      <Nav.Link href="/home">Logout</Nav.Link>
+      <Nav.Link href="/home"  >Logout</Nav.Link>
     </Nav.Item>
     <Nav.Item>
       <Nav.Link className="nav-cart"href="/home">CARRELLO</Nav.Link>
