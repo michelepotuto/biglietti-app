@@ -5,6 +5,7 @@ const Tickets = (props) => {
     <>
       {props.tickets.map((ticketsItem) => (
         <TicketsItem
+          key={ticketsItem.codeRep}
           band={ticketsItem.band}
           city={ticketsItem.city}
           placeName={ticketsItem.placeName}

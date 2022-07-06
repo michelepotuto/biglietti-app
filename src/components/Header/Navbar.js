@@ -1,9 +1,14 @@
 import React from "react";
 import { Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import AuthContext from "../../logic/auth-context"
+
 
 
 const Navbar = () => {
+  const ctx = useContext(AuthContext);
+
   return (
     <div>
 
@@ -26,10 +31,10 @@ const Navbar = () => {
               </button>
             </Nav.Item>
           </Nav>
-          <div className="title h3"> PRENOTA IL TUO BIGLIETTO</div>
+          <div className="title h3"> PRENOTA IL TUO BIGLIETTO!</div>
           <Nav className="justify-content-end" activeKey="/home">
             <Nav.Item>
-              <Nav.Link as={Link} to="/login">
+              <Nav.Link as={Link} onClick={ctx.logout} to="/login">
                 Logout
               </Nav.Link>
             </Nav.Item>
