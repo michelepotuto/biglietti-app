@@ -2,7 +2,69 @@
     width: 100%;
 
     background-image: url("./assets/sfondo.jpeg");
+    
 }
+
+
+
+.card {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+
+  margin: 10px;
+
+  
+
+}
+
+.card-body {
+  margin-left: -300px;
+  margin-top: -20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.card-text{
+  border-radius: 6px;
+  background-color:rgba(248, 248, 248, 0.789);
+}
+
+.container-card {
+    background-image: url("./assets/biglietto.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    height: 450px;
+
+}
+
+/* .btn {
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  max-width: 10%;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  background-color:rgba(255, 255, 255, 0.379)!important;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+} */
 
 body {
     margin: 0;
@@ -28,6 +90,13 @@ body {
     background-color:rgba(171, 18, 89, 0.789);
 }
 
+.rimuovi-cart {
+  
+  box-shadow: 3px 3px 0px 0 rgba(0, 0, 0, 0.8), 0 6px 120px 0 rgba(0, 0, 0, 0.99);
+  border-radius: 3px;
+  background-color:rgba(171, 18, 89, 0.605);
+}
+
 .nav-link:hover {
     color: white!important;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -43,6 +112,8 @@ body {
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
 
+
+
 .title {
     display: flex;
     justify-content: center;
@@ -51,3 +122,13 @@ body {
 
     background-color:rgba(36, 207, 207, 0.626);
 }
+
+.titleConcert {
+  display: flex;
+  justify-content: center;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.99);
+  min-width: 100%;
+  background-color:rgba(36, 207, 207, 0.626);
+}
+
