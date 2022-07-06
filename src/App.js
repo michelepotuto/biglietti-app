@@ -9,6 +9,7 @@ import Footer from "./components/Header/Footer";
 import Cart from "./components/pages/Cart";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
+
 function App() {
   return (
     <Fragment>
