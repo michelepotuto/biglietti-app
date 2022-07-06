@@ -12,7 +12,7 @@
         "city": "Torino",
         "placeName": "Stadio Mino",
         "dataConcert": "2/11/2022",
-        "codeRep": 2
+        "codeRep": "2"
     },    
     
     {
@@ -20,7 +20,7 @@
         "city": "Pavia",
         "placeName": "Piazza Sorro",
         "dataConcert": "19/10/2022",
-        "codeRep": 3
+        "codeRep": "3"
     },    
 
     {
@@ -28,7 +28,7 @@
         "city": "Verona",
         "placeName": "Piazza Mamma",
         "dataConcert": "14/08/2022",
-        "codeRep": 4
+        "codeRep": "4"
     },    
 
     {
@@ -36,7 +36,7 @@
         "city": "Verona",
         "placeName": "Piazza Nonso",
         "dataConcert": "08/07/2022",
-        "codeRep": 5
+        "codeRep": "5"
     },    
 
     {
@@ -44,7 +44,7 @@
         "city": "Milano",
         "placeName": "Piazza Mimmo",
         "dataConcert": "11/10/2022",
-        "codeRep": 6
+        "codeRep": "6"
     },    
 
     {
@@ -52,7 +52,7 @@
         "city": "Roma",
         "placeName": "Piazza Semon",
         "dataConcert": "14/10/2022",
-        "codeRep": 7
+        "codeRep": "7"
     },    
     
     {
@@ -60,6 +60,6 @@
         "city": "Milano",
         "placeName": "Piazza Ciccia",
         "dataConcert": "14/09/2022",
-        "codeRep": 8
+        "codeRep": "8"
     }
 ]

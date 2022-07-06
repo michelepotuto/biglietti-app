@@ -10,10 +10,9 @@ function Home() {
     setMenuItems(
       tickets.filter(
         (m) =>
-          !filterCity ||
-          (stringComparer(m.city, filterCity) &&
-            (!filterBand || m.bande === filterBand) &&
-            (!filterCode || m.codeRep <= filterCode))
+          (!filterCity || stringComparer(m.city, filterCity)) &&
+          (!filterBand || stringComparer(m.band, filterBand)) &&
+          (!filterCode || stringComparer(m.codeRep, filterCode))
       )
     );
   };
