@@ -9,7 +9,7 @@ const Tickets = (props) => {
           city={ticketsItem.city}
           placeName={ticketsItem.placeName}
           dataConcert={ticketsItem.dataConcert}
-          key={ticketsItem.codeRep}
+          codeRep={ticketsItem.codeRep}
         />
       ))}
     </>
