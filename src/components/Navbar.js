@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <div>
-<<<<<<< HEAD
 
 
         <>
@@ -34,7 +33,6 @@ const Navbar = () => {
   </div> 
 </>
 
-=======
       <>
         <div className="container1">
           <Nav className="justify-content-flex-start" activeKey="/home">
@@ -74,7 +72,6 @@ const Navbar = () => {
           </Nav>
         </div>
       </>
->>>>>>> ab06818b686abacf0b33ae6ee500a36589a57c89
     </div>
   );
 };
