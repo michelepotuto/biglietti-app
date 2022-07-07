@@ -1,0 +1,19 @@
+[
+    {
+        "codiceCliente": "pass2",
+        "username": "Martin",
+        "grade": "user"
+    },
+
+    {
+        "codiceCliente": "pass1",
+        "username": "Eduard",
+        "grade": "user"
+    },
+
+    {
+        "codiceCliente": "admin",
+        "username": "Michele",
+        "grade": "admin"
+    }
+]

@@ -1,0 +1,65 @@
+[
+    {
+        "band": "LinkinP",
+        "city": "Torino",
+        "placeName": "Piazza Coner",
+        "dataConcert": "10/12/2022",
+        "codeRep": "1"
+    },
+
+    {
+        "band": "Vino",
+        "city": "Torino",
+        "placeName": "Stadio Mino",
+        "dataConcert": "2/11/2022",
+        "codeRep": "2"
+    },    
+    
+    {
+        "band": "LimbB",
+        "city": "Pavia",
+        "placeName": "Piazza Sorro",
+        "dataConcert": "19/10/2022",
+        "codeRep": "3"
+    },    
+
+    {
+        "band": "LimbB",
+        "city": "Verona",
+        "placeName": "Piazza Mamma",
+        "dataConcert": "14/08/2022",
+        "codeRep": "4"
+    },    
+
+    {
+        "band": "LimbB",
+        "city": "Verona",
+        "placeName": "Piazza Nonso",
+        "dataConcert": "08/07/2022",
+        "codeRep": "5"
+    },    
+
+    {
+        "band": "LimbB",
+        "city": "Milano",
+        "placeName": "Piazza Mimmo",
+        "dataConcert": "11/10/2022",
+        "codeRep": "6"
+    },    
+
+    {
+        "band": "LimbB",
+        "city": "Roma",
+        "placeName": "Piazza Semon",
+        "dataConcert": "14/10/2022",
+        "codeRep": "7"
+    },    
+    
+    {
+        "band": "Mose",
+        "city": "Milano",
+        "placeName": "Piazza Ciccia",
+        "dataConcert": "14/09/2022",
+        "codeRep": "8"
+    }
+]
