@@ -1,38 +1,47 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle";
-import Navbar from "./components/Header/Navbar";
-import { Fragment, useContext, useState } from "react";
-import Home from "./components/pages/Home";
-import { Route, Routes, useNavigate } from "react-router-dom";
-import Footer from "./components/Header/Footer";
-import Cart from "./components/pages/Cart";
 import "bootstrap-icons/font/bootstrap-icons.css";
+
+import { Fragment, useContext, useEffect, useState } from "react";
+import { Route, Routes, useNavigate } from "react-router-dom";
+import Axios from "axios";
+
 import AuthContext from "./logic/auth-context";
-import login from "../src/login.json";
 import NavbarLogin from "./components/Header/NavbarLogin";
 import { useDispatch } from "react-redux";
-import { counterAction } from "./logic/counter-store";
+
+import Navbar from "./components/Header/Navbar";
+import Home from "./components/pages/Home";
+import Footer from "./components/Header/Footer";
+import Cart from "./components/pages/Cart";
+import { counterActions } from "./store/counter-store";
 
 function App() {
   const navigate = useNavigate();
   const ctx = useContext(AuthContext);
 
   const [input, setInput] = useState("");
+  const [user, setUser] = useState([]);
 
-// dispatch???
   const dispatch = useDispatch();
-  dispatch({ type: counterAction.START });
+  dispatch({ type: counterActions.START });
+
+  useEffect(() => {
+    Axios.get("http://localhost:3001/api/getUser").then((response) => {
+      setUser(response.data);
+    });
+  }, []);
 
   const usernameChangeHandler = (e) => {
     const value = e.target.value;
     setInput(value);
   };
 
-  const [user, setUser] = useState(login);
-
   const handleSubmit = (event) => {
-    const userData = user.find((u) => u.codiceCliente === input);
+    event.preventDefault();
+
+    const userData = user.find((u) => u.userCode === input);
     const obj = { ...userData };
 
     if (userData) {
