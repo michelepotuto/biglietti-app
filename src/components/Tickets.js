@@ -10,6 +10,7 @@ const Tickets = (props) => {
           city={ticketsItem.city}
           placeName={ticketsItem.placeName}
           dataConcert={ticketsItem.dataConcert}
+          price={ticketsItem.price}
           codeRep={ticketsItem.codeRep}
         />
       ))}
