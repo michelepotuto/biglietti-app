@@ -3,9 +3,11 @@ import { Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import AuthContext from "../../logic/auth-context";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const ctx = useContext(AuthContext);
+  const count = useSelector((store) => store.count);
 
   return (
     <div>
@@ -42,7 +44,7 @@ const Navbar = () => {
             </Nav.Item>
             <Nav.Item>
               <Nav.Link as={Link} to="/cart" className="nav-cart">
-                CARRELLO
+                CARRELLO ({count})
               </Nav.Link>
             </Nav.Item>
           </Nav>

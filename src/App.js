@@ -2,7 +2,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle";
 import Navbar from "./components/Header/Navbar";
-import { Fragment, useContext, useEffect, useState } from "react";
+import { Fragment, useContext, useState } from "react";
 import Home from "./components/pages/Home";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import Footer from "./components/Header/Footer";
@@ -11,12 +11,18 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import AuthContext from "./logic/auth-context";
 import login from "../src/login.json";
 import NavbarLogin from "./components/Header/NavbarLogin";
+import { useDispatch } from "react-redux";
+import { counterAction } from "./logic/counter-store";
 
 function App() {
   const navigate = useNavigate();
   const ctx = useContext(AuthContext);
 
   const [input, setInput] = useState("");
+
+// dispatch???
+  const dispatch = useDispatch();
+  dispatch({ type: counterAction.START });
 
   const usernameChangeHandler = (e) => {
     const value = e.target.value;
