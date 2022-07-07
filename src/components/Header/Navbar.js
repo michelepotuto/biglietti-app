@@ -2,32 +2,29 @@ import React from "react";
 import { Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import AuthContext from "../../logic/auth-context"
-
-
+import AuthContext from "../../logic/auth-context";
 
 const Navbar = () => {
   const ctx = useContext(AuthContext);
 
   return (
     <div>
-
       <>
         <div className="container1">
           <Nav className="justify-content-flex-start" activeKey="/home">
             <Nav.Item>
               <button>
-              <i className="bi bi-facebook fs-4"></i>
+                <i className="bi bi-facebook fs-4"></i>
               </button>
             </Nav.Item>
             <Nav.Item>
-            <button>
-              <i className="bi bi-instagram fs-4"></i>
+              <button>
+                <i className="bi bi-instagram fs-4"></i>
               </button>
             </Nav.Item>
             <Nav.Item>
-            <button>
-              <i className="bi bi-twitter fs-4"></i>
+              <button>
+                <i className="bi bi-twitter fs-4"></i>
               </button>
             </Nav.Item>
           </Nav>
@@ -40,7 +37,7 @@ const Navbar = () => {
             </Nav.Item>
             <Nav.Item>
               <Nav.Link as={Link} to="/home">
-                Home
+                Biglietti
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
