@@ -4,8 +4,8 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
-import { AuthContextProvider } from "./logic/auth-context";
-import counterStore from "./logic/counter-store";
+import { AuthContextProvider } from "./store/auth-context";
+import counterStore from "./store/counter-store";
 import { Provider } from "react-redux";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
