@@ -1,33 +1,40 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Tickets from "../Tickets";
-import tickets from "../../tickets.json";
 import FilterForm from "../../logic/FilterForm";
+import Axios from "axios";
 
 const stringComparer = (s1, s2) => s1.toLowerCase().includes(s2.toLowerCase());
 
 function Home() {
+  const [menuItems, setMenuItems] = useState([]);
+  const [showTickets, setShowTickets] = useState(false);
+  const [filterMenu, setFilterMenu] = useState([]);
+
+  useEffect(() => {
+    Axios.get("http://localhost:3001/api/getTickets").then((response) => {
+      setMenuItems(response.data);
+    });
+  }, []);
+
   const filterHandler = (filterCity, filterBand, filterCode) => {
-    setMenuItems(
-      tickets.filter(
+    setFilterMenu(
+      menuItems.filter(
         (m) =>
           (!filterCity || stringComparer(m.city, filterCity)) &&
           (!filterBand || stringComparer(m.band, filterBand)) &&
           (!filterCode || stringComparer(m.codeRep, filterCode))
       )
     );
-  };
-  const [menuItems, setMenuItems] = useState(tickets);
 
-  const [showFilter, setShowFilter] = useState(true);
-  const showFilterHandler = () => {
-    setShowFilter((previousState) => !previousState);
+    setShowTickets(true);
   };
 
   return (
     <>
-      {showFilter && <FilterForm onFilter={filterHandler} />}
+      <FilterForm onFilter={filterHandler} />
       <div text="Menu"></div>
-      <Tickets tickets={menuItems} />
+      {!showTickets && <Tickets tickets={menuItems} />}
+      {showTickets && <Tickets tickets={filterMenu} />}
     </>
   );
 }
