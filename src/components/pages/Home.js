@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Tickets from "../Tickets";
-import FilterForm from "../../logic/FilterForm";
+import FilterForm from "../../store/FilterForm";
 import Axios from "axios";
 
 const stringComparer = (s1, s2) => s1.toLowerCase().includes(s2.toLowerCase());

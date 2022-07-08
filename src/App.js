@@ -7,7 +7,7 @@ import { Fragment, useContext, useEffect, useState } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import Axios from "axios";
 
-import AuthContext from "./logic/auth-context";
+import AuthContext from "./store/auth-context";
 import NavbarLogin from "./components/Header/NavbarLogin";
 import { useDispatch } from "react-redux";
 
@@ -30,8 +30,12 @@ function App() {
   useEffect(() => {
     Axios.get("http://localhost:3001/api/getUser").then((response) => {
       setUser(response.data);
+  console.log(response.data);
+
     });
   }, []);
+
+  console.log(user)
 
   const usernameChangeHandler = (e) => {
     const value = e.target.value;

@@ -2,7 +2,7 @@ import React from "react";
 import { Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import AuthContext from "../../logic/auth-context";
+import AuthContext from "../../store/auth-context";
 import { useSelector } from "react-redux";
 
 const Navbar = () => {
