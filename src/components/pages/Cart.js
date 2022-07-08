@@ -3,20 +3,7 @@ import { Card } from "react-bootstrap";
 
 const Cart = () => {
   return (
-    // <div className="cart-container">
-    //   <br></br>
-    //   <div className="title">
-    //     <div className="card justify-content-center">
-    //       <div className="container">Nome band</div>
-    //     </div>
-    //     <div className="card-body"> Città e luogo del concerto &nbsp;&nbsp;&nbsp;
-    //     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    //     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Data, orario e codice replica</div>
-    //     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-    //     <button className="btn title">Rimuovi</button>
-    //   </div>
-    // </div>
     <>
       <Card className="container-card text-center">
         <Card.Body>

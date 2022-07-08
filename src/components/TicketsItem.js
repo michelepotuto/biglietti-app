@@ -27,7 +27,13 @@ const TicketsItem = (props) => {
     const prev = parseInt(sessionStorage.getItem(counterName.COUNT)) + 1;
     sessionStorage.setItem(counterName.COUNT, prev);
     dispatch({ type: counterActions.UPDATE });
+
+    
   };
+
+
+
+    
 
   return (
     <Card className="container-card text-center">
