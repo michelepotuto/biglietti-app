@@ -1,9 +1,13 @@
 import React from "react";
 import { Card } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { counterActions } from "../../store/counter-store";
 
 const Cart = () => {
-  return (
+  const dispatch = useDispatch();
 
+  dispatch({ type: counterActions.UPDATE });
+  return (
     <>
       <Card className="container-card text-center">
         <Card.Body>
@@ -15,8 +19,6 @@ const Cart = () => {
 
         <button className="rimuovi-cart">Quantità || Rimuovi</button>
       </Card>
-
-      
     </>
   );
 };
