@@ -16,24 +16,31 @@ const TicketsItem = (props) => {
     if (parseInt(sessionStorage.getItem(counterName.COUNT)) === 0) {
       sessionStorage.setItem(counterName.CART, JSON.stringify(props));
     } else {
-      const storageCart = [
-        sessionStorage.getItem(counterName.CART),
-        JSON.stringify(props),
-      ];
+      const search = JSON.parse(
+        "[" + sessionStorage.getItem(counterName.CART) + "]"
+      );
+      const index = search.findIndex((i) => {
+        return i.codeRep === ticket.codeRep;
+      });
 
-      sessionStorage.setItem(counterName.CART, storageCart);
+      if (index !== -1) {
+        sessionStorage.setItem(
+          counterName.CART,
+          JSON.stringify(search).replace("[", "").replace("]", "")
+        );
+      } else {
+        const storageCart = [
+          sessionStorage.getItem(counterName.CART),
+          JSON.stringify(props),
+        ];
+        sessionStorage.setItem(counterName.CART, storageCart);
+      }
     }
 
     const prev = parseInt(sessionStorage.getItem(counterName.COUNT)) + 1;
     sessionStorage.setItem(counterName.COUNT, prev);
     dispatch({ type: counterActions.UPDATE });
-
-    
   };
-
-
-
-    
 
   return (
     <Card className="container-card text-center">
