@@ -239,6 +239,14 @@ align-items: center;
   margin: 10px;
 }
 
+.container_emptypay {
+  display: flex;
+  justify-content: flex-end;
+  padding: 13px;
+
+  
+}
+
 
 
 

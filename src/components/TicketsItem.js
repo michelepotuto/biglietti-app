@@ -40,6 +40,16 @@ const TicketsItem = (props) => {
     const prev = parseInt(sessionStorage.getItem(counterName.COUNT)) + 1;
     sessionStorage.setItem(counterName.COUNT, prev);
     dispatch({ type: counterActions.UPDATE });
+
+    let count = 0;
+    JSON.parse("[" + sessionStorage.getItem(counterName.CART) + "]").map(
+      (props) => {
+        count += props. price;
+      }
+    );
+    sessionStorage.setItem(counterName.TOTAL, count);
+    //update
+    dispatch({ type: counterActions.UPDATE });
   };
 
   return (
