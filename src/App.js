@@ -30,12 +30,8 @@ function App() {
   useEffect(() => {
     Axios.get("http://localhost:3001/api/getUser").then((response) => {
       setUser(response.data);
-  console.log(response.data);
-
     });
   }, []);
-
-  console.log(user)
 
   const usernameChangeHandler = (e) => {
     const value = e.target.value;
