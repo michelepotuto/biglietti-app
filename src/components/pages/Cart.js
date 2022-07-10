@@ -57,7 +57,7 @@ const Cart = () => {
                   <Card.Text>
                     Data: {p.dataConcert}
                     <br></br>
-                    Price: {p.price}$
+                    Prezzo: {p.price}$ Quantità: {p.cartQuantity}
                   </Card.Text>
                   <Card.Footer className="text-muted">{p.codeRep}</Card.Footer>
                 </Card.Body>

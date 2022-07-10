@@ -12,6 +12,8 @@ const Tickets = (props) => {
           dataConcert={ticketsItem.dataConcert}
           price={ticketsItem.price}
           codeRep={ticketsItem.codeRep}
+          quantity={ticketsItem.quantity}
+          cartQuantity={ticketsItem.cartQuantity}
         />
       ))}
     </>

@@ -4,8 +4,7 @@ import { useDispatch } from "react-redux";
 import { counterActions, counterName } from "../store/counter-store";
 
 const TicketsItem = (props) => {
-  const { band, city, placeName, dataConcert, codeRep, price, quantity } =
-    props;
+  const { band, city, placeName, dataConcert, codeRep, price } = props;
   const dispatch = useDispatch();
 
   const ticket = { ...props };
@@ -13,7 +12,11 @@ const TicketsItem = (props) => {
   const addToCartHandler = () => {
     dispatch({ type: counterActions.INCREMENT });
 
-    if (parseInt(sessionStorage.getItem(counterName.COUNT)) === 0) {
+    if (
+      !sessionStorage.getItem(counterName.CART) ||
+      parseInt(sessionStorage.getItem(counterName.COUNT)) === 0
+    ) {
+      ticket.cartQuantity = 1;
       sessionStorage.setItem(counterName.CART, JSON.stringify(props));
     } else {
       const search = JSON.parse(
@@ -24,6 +27,15 @@ const TicketsItem = (props) => {
       });
 
       if (index !== -1) {
+        if (search[index].cartQuantity < search[index].quantity) {
+          //if there are enough product in store
+          //increase quantity
+          search[index].cartQuantity++;
+          //increment cart count
+        } else {
+          // can't add more of this product
+          alert("Hai raggiunto il limite di quantità per questo prodotto");
+        }
         sessionStorage.setItem(
           counterName.CART,
           JSON.stringify(search).replace("[", "").replace("]", "")
@@ -39,16 +51,16 @@ const TicketsItem = (props) => {
 
     const prev = parseInt(sessionStorage.getItem(counterName.COUNT)) + 1;
     sessionStorage.setItem(counterName.COUNT, prev);
-    dispatch({ type: counterActions.UPDATE });
 
     let count = 0;
     JSON.parse("[" + sessionStorage.getItem(counterName.CART) + "]").map(
       (props) => {
-        count += props. price;
+        count += props.price * props.cartQuantity;
       }
     );
     sessionStorage.setItem(counterName.TOTAL, count);
     //update
+
     dispatch({ type: counterActions.UPDATE });
   };
 
