@@ -6,13 +6,12 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { counterActions } from "../../store/counter-store";
 
-const Cart = () => {
+const Cart = (props) => {
   const search = JSON.parse(
     "[" + sessionStorage.getItem(counterName.CART) + "]"
   );
 
   const count = useSelector((store) => store.count);
-  const cart = useSelector((store) => store.cartArray);
   const total = useSelector((store) => store.total);
   const dispatch = useDispatch();
 
@@ -27,6 +26,50 @@ const Cart = () => {
     sessionStorage.removeItem(counterName.CART);
     dispatch({ type: counterActions.UPDATE }); //refresh the cart
     console.log("reset cart");
+  };
+
+  const removeFromCart = () => {
+    const { codeRep, cartQuantity } = props;
+    const ticket = { ...props };
+
+    const newCount = parseInt(sessionStorage.getItem(counterName.COUNT));
+
+    if (newCount === 0) {
+      sessionStorage.removeItem(counterName.COUNT);
+      sessionStorage.removeItem(counterName.CART);
+      sessionStorage.removeItem(counterName.TOTAL);
+    } else {
+      sessionStorage.setItem(counterName.COUNT, newCount - 1);
+    }
+    const searchArray = JSON.parse(
+      "[" + sessionStorage.getItem(counterName.CART) + "]"
+    );
+    const index = searchArray.findIndex(function (item) {
+      return item.codeRep === codeRep;
+    });
+    if (searchArray[index].cartQuantity > 1) {
+      searchArray[index].cartQuantity--;
+      sessionStorage.setItem(
+        counterName.CART,
+        JSON.stringify(searchArray).replace("[", "").replace("]", "")
+      );
+    } else {
+      let newCart = searchArray.filter((s) => s.codeRep !== codeRep);
+      sessionStorage.setItem(
+        counterName.CART,
+        JSON.stringify(newCart).replace("[", "").replace("]", "")
+      );
+    }
+
+    let count = 0;
+    JSON.parse("[" + sessionStorage.getItem(counterName.CART) + "]").map(
+      (props) => {
+        count += props.price * props.cartQuantity;
+      }
+    );
+    sessionStorage.setItem(counterName.TOTAL, count);
+
+    dispatch({ type: counterActions.UPDATE });
   };
 
   return (
@@ -57,12 +100,14 @@ const Cart = () => {
                   <Card.Text>
                     Data: {p.dataConcert}
                     <br></br>
-                    Prezzo: {p.price}$ Quantità: {p.cartQuantity}
+                    Price: {p.price}$
                   </Card.Text>
                   <Card.Footer className="text-muted">{p.codeRep}</Card.Footer>
                 </Card.Body>
 
-                <button className="rimuovi-cart">Rimuovi</button>
+                <button className="rimuovi-cart" onClick={removeFromCart}>
+                  Rimuovi
+                </button>
               </Card>
             );
           })}
